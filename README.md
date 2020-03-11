@@ -25,7 +25,7 @@ https://github.com/BergerMarcin/TranslateDjango.git
     - **`django-admin startproject <project_name> .`**    # important whitespace and dot after project_name
     - **`virtualenv -p python3 venv`**    # venv folder should be subfolder of the folder where manage.py is located
     - **`source venv/bin/activate`**
-    - **`pip3 install django==2.2.7`**
+    - **`pip3 install django==2.2.10`**
     - **`pip3 install psycopg2-binary==2.8.3`**   # controller in case applied PostgreSQL
     - **`pip3 install pytz==2019.3`**    # for time-zones controll
     - **`pip3 install sqlparse==0.3.0`**
@@ -144,7 +144,7 @@ https://docs.djangoproject.com/en/dev/topics/i18n/translation/#internationalizat
 ```
 <br>5. **Translate messages** (collect and translate marked texts)
 
-  - **django's automized collection marked texts** from all project files into files `*.po` (called message files). 
+  - **collection messages (marked texts) by i18n** from all project files into files `*.po` (called message files). 
   Message files are located @ `locale/<language>/LC_MESSAGES` subfolders of project and of each app (or single app*). 
   Please in terminal* apply one of:
     <br>**`django-admin makemessages -l fr`**   # in case only 1 language to be collected
@@ -152,6 +152,13 @@ https://docs.djangoproject.com/en/dev/topics/i18n/translation/#internationalizat
     <br>**`django-admin makemessages`**    #after first collection 
     >** - the script should be run from one of two places: the root directory of your Django project (the one that 
     contains manage.py)  OR  the root directory of one of your Django apps
+
+    >In case problems with message collection please **create folders** called `console` 
+    (or `consoles`; acc. `LOCALE_PATHS`) manually **at**:
+    > - main folder
+    > - project folder
+    > - apps' folders
+    <br> and re-run **`django-admin makemessages -l fr`**
 
   - **manual translation** in `*.po` files: text marked with key `msgid` should be translated by YOU** @ key `msgstr` 
     <br>What is nice: Once translated messages (texts) are kept at message files `*.po` after repeated/updated 
