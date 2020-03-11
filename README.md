@@ -1,18 +1,18 @@
-#Translations @ Django projects with i18n
+# Translations @ Django projects with i18n
 <br>
 
-####GitHub:
-https://github.com/BergerMarcin
+#### GitHub:
+https://github.com/BergerMarcin/TranslateDjango.git
 <br><br>
 
-####Documentation (from the best):
+#### Documentation (from the best):
 - https://docs.djangoproject.com/en/dev/topics/i18n/translation/ 
 - https://docs.djangoproject.com/en/3.0/topics/i18n/
 - https://matix.io/django-i18n-translation-cheatsheet/
 - https://medium.com/@nolanphillips/a-short-intro-to-translating-your-site-with-django-1-8-343ea839c89b 
 <br><br>
 
-####Notes:
+#### Notes:
  - `messages` (text to be translated) are specialy marked texts from the script (python files and templates) + warning 
  messages + error messages
  - `locale` (or `locales`) - recommended folders name for translation files
@@ -20,7 +20,7 @@ https://github.com/BergerMarcin
  - files `*.mo` - compiled message files (to be used by Django; might be read as txt files)
 <br><br>
 
-#Application procedure
+# Application procedure
 1. **Set Django project from terminal** with (& some settings in settings.py & database creation):
     - **`django-admin startproject <project_name> .`**    # important whitespace and dot after project_name
     - **`virtualenv -p python3 venv`**    # venv folder should be subfolder of the folder where manage.py is located
@@ -147,9 +147,9 @@ https://docs.djangoproject.com/en/dev/topics/i18n/translation/#internationalizat
   - **django's automized collection marked texts** from all project files into files `*.po` (called message files). 
   Message files are located @ `locale/<language>/LC_MESSAGES` subfolders of project and of each app (or single app*). 
   Please in terminal* apply one of:
-    <br>**`django-admin makemessages`** 
     <br>**`django-admin makemessages -l fr`**   # in case only 1 language to be collected
     <br>**`django-admin makemessages -a`**   # in case all languages
+    <br>**`django-admin makemessages`**    #after first collection 
     >** - the script should be run from one of two places: the root directory of your Django project (the one that 
     contains manage.py)  OR  the root directory of one of your Django apps
 
